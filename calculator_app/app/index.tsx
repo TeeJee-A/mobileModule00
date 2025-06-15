@@ -67,6 +67,7 @@ const Home = () => {
         setResult('Error');
         return;
       }
+      setInput(res.toString());
       setResult(res.toString());
     } catch (error) {
       setResult('Error');
@@ -83,7 +84,6 @@ const Home = () => {
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'column',
-        
       }}
     >
       <View
@@ -131,7 +131,7 @@ const Home = () => {
             key={index}
             style={{
               width: button === '=' ? '39%' : '19%',
-              height:  80,
+              height: 80,
               justifyContent: 'center',
               alignItems: 'center',
               padding: 3,

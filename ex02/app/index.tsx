@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, TouchableOpacity, TextInput } from 'react-native';
 
 const Home = () => {
-  const buttons = [
+  const buttons: string[] = [
     '7',
     '8',
     '9',
@@ -23,9 +23,11 @@ const Home = () => {
     '00',
     '=',
   ];
+
   const handlePress = (value: string) => {
     console.log(value);
   };
+
   return (
     <View
       style={{
@@ -70,24 +72,23 @@ const Home = () => {
       </View>
       <View
         style={{
-          // height: '70%',
-          width: '100%',
           backgroundColor: 'black',
           flexDirection: 'row',
           flexWrap: 'wrap',
-          flex: 1,
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          padding: 10,
         }}
       >
         {buttons.map((button: string, index: number) => (
           <View
             key={index}
             style={{
-              width: button === '=' ? '40%' : '20%',
-              height: '20%',
+              width: button === '=' ? '39%' : '19%',
+              height: 80,
               justifyContent: 'center',
               alignItems: 'center',
               padding: 3,
-              borderWidth: 1,
             }}
           >
             <TouchableOpacity
@@ -97,8 +98,6 @@ const Home = () => {
                 height: '100%',
                 justifyContent: 'center',
                 alignItems: 'center',
-                borderWidth: 1,
-                borderColor: 'black',
                 backgroundColor:
                   button === 'A' ||
                   button === 'AC' ||
